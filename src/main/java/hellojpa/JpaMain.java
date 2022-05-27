@@ -48,8 +48,8 @@ public class JpaMain {
 //            System.out.println("======================");
 
 //            변경감지
-            Member findMember = em.find(Member.class, 150L);
-            findMember.setName("ZZZZZZ");
+//            Member findMember = em.find(Member.class, 150L);
+//            findMember.setName("ZZZZZZ");
 
             tx.commit();
         } catch (Exception e) {
