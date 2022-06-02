@@ -1,5 +1,7 @@
 package jpashop;
 
+import jpashop.domain.item.Movie;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -15,6 +17,12 @@ public class JpaMain {
         tx.begin();
 
         try {
+            Movie movie = new Movie();
+            movie.setName("aaaa");
+            movie.setActor("bbb");
+            movie.setDirector("ccc");
+            em.persist(movie);
+
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
