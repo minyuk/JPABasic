@@ -1,9 +1,8 @@
 package jpashop.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+
+import static javax.persistence.FetchType.LAZY;
 
 @Entity
 public class Delivery {
@@ -11,7 +10,7 @@ public class Delivery {
     @Id @GeneratedValue
     private Long id;
 
-    @OneToOne(mappedBy = "delivery")
+    @OneToOne(fetch = LAZY, mappedBy = "delivery")
     private Order order;
 
     private String city;
