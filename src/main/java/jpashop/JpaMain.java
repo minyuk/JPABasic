@@ -1,5 +1,7 @@
 package jpashop;
 
+import jpashop.domain.Member;
+import jpashop.domain.item.Address;
 import jpashop.domain.item.Movie;
 
 import javax.persistence.EntityManager;
@@ -17,11 +19,10 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Movie movie = new Movie();
-            movie.setName("aaaa");
-            movie.setActor("bbb");
-            movie.setDirector("ccc");
-            em.persist(movie);
+            Member member = new Member();
+            member.setName("member");
+            member.setAddress(new Address("city", "street", "zipcode"));
+            em.persist(member);
 
             tx.commit();
         } catch (Exception e) {

@@ -1,5 +1,7 @@
 package jpashop.domain;
 
+import jpashop.domain.item.Address;
+
 import javax.persistence.*;
 
 import static javax.persistence.FetchType.LAZY;
@@ -13,9 +15,8 @@ public class Delivery {
     @OneToOne(fetch = LAZY, mappedBy = "delivery")
     private Order order;
 
-    private String city;
-    private String street;
-    private String zipcode;
+    @Embedded
+    private Address address;
 
     private DeliveryStatus status;
 
